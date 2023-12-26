@@ -28,10 +28,20 @@ class FloorSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'block', 'floor_rooms']
 
 
+class RoomDetailUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RoomDetails
+        fields = ['id', 'price_30', 'client_name',
+                  'price_50', 'price_100', 'terrace_price_30', 'terrace_price_50', 'terrace_price_100']
+
+
 class RoomDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = RoomDetails
-        fields = ['count_rooms','full_area','id','terrace_area', 'image_1','image_2','client_name','price_0','price_30','price_50','price_100','terrace_price_0','terrace_price_30','terrace_price_50','terrace_price_100','room']
+        fields = ['id', 'count_rooms', 'full_area', 'id', 'terrace_area', 'image_1', 'image_2', 'client_name',
+                  'price_30',
+                  'price_50', 'price_100', 'terrace_price_30', 'terrace_price_50', 'terrace_price_100', 'room']
+
 
 
 class RoomSerializer2(serializers.ModelSerializer):

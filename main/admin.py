@@ -2,14 +2,9 @@ from django.contrib import admin
 from .models import Block, Floor, Room, RoomDetails, AmountSkidki
 
 
-@admin.register(AmountSkidki)
-class AmountSkidkiAdmin(admin.ModelAdmin):
-    pass
-
-
 class RoomDetailAdmin(admin.StackedInline):
     model = RoomDetails
-    extra = 1
+    extra = 0
 
 
 @admin.register(Block)
@@ -19,9 +14,11 @@ class BlockAdmin(admin.ModelAdmin):
 
 @admin.register(Floor)
 class FloorAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name','block']
 
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
     inlines = [RoomDetailAdmin]
+    list_display = ['floor','room_number']
+    list_filter = ['floor']

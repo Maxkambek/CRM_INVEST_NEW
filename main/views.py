@@ -1,6 +1,12 @@
 from rest_framework import generics
-from .models import Block, Floor, Room, AmountSkidki
-from .serializer import BlockSerializer, FloorSerializer, RoomSerializer, RoomSerializer2, AmountSkidkiSerializer
+from .models import Block, Floor, Room, AmountSkidki, RoomDetails
+from .serializer import BlockSerializer, FloorSerializer, RoomSerializer, RoomSerializer2, AmountSkidkiSerializer, \
+    RoomDetailUpdateSerializer
+
+
+class RoomDetailUpdateAPIView(generics.UpdateAPIView):
+    queryset = RoomDetails.objects.all()
+    serializer_class = RoomDetailUpdateSerializer
 
 
 class BlockListAPIView(generics.ListAPIView):

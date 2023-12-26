@@ -6,5 +6,6 @@ urlpatterns = [
     path('floor/', views.FloorListAPIView.as_view()),
     path('room/', views.RoomListAPIView.as_view()),
     path('room/<int:pk>/', views.RoomDetailAPIView.as_view()),
+    path('room-update/<int:pk>/', views.RoomDetailUpdateAPIView.as_view()),
     path('skidki/', views.SkidkiAPIView.as_view()),
 ]
