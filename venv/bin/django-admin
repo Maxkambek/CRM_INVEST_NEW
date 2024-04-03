@@ -1,4 +1,4 @@
-#!/home/dev/Desktop/back/invest_crm/venv/bin/python3
+#!/var/www/invest/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
